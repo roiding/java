@@ -1,0 +1,31 @@
+server:
+  port: ${random.int[10000,19999]}
+
+elasticjob:
+  regCenter:
+    serverLists: 192.168.189.131:2181,192.168.189.131:2182,192.168.189.131:2183
+    namespace: elasticjob-demo
+    baseSleepTimeMilliseconds: 4000
+    maxSleepTimeMilliseconds: 8000
+    maxRetries: 3
+  jobs:
+    firstJob:
+      elasticJobClass: ran.ding.job.FirstJob
+      cron: 0/6 * * * * ?
+      shardingTotalCount: 3
+      jobErrorHandlerType: WECHAT
+      props:
+        wechat:
+          webhook: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=73edb58e-2979-407e-8b2e-489e8f7651c0
+          connectTimeoutMilliseconds: 3000
+          readTimeoutMilliseconds: 5000
+    secondJob:
+      elasticJobClass: ran.ding.job.SecondJob
+      cron: 0/10 * * * * ?
+      shardingTotalCount: 1
+      jobErrorHandlerType: WECHAT
+      props:
+        wechat:
+          webhook: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=73edb58e-2979-407e-8b2e-489e8f7651c0
+          connectTimeoutMilliseconds: 3000
+          readTimeoutMilliseconds: 5000
