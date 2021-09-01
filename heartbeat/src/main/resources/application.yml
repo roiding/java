@@ -1,0 +1,19 @@
+logging:
+  level:
+    root: info
+
+spring:
+  main:
+    web-application-type: none
+
+netty:
+    # 服务端口
+    port: 1024
+    # 绑定的网卡
+    ip: 0.0.0.0
+    # 超时时间
+    overtime: 10
+    # 消息帧最大体积
+    # max-frame-size: 10240
+    # URI路径
+    # path: /channel
