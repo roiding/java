@@ -1,0 +1,27 @@
+server:
+  port: 8080 # 端口号
+spring:
+  datasource: # 数据库参数配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.189.132:3306/test?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: maodou38
+  redis:
+    database: 1
+    host: 192.168.189.132
+    port: 6379
+    password:
+    # 连接池
+    lettuce:
+      pool:
+        # 连接池最大连接数
+        max-active: 8
+        # 连接池最大阻塞等待时间
+        max-wait: -1ms
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池中的最小空闲连接
+        min-idle: 0
+logging:
+  level:
+    ran.ding.fluent.mapper: debug
