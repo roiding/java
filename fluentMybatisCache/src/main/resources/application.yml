@@ -24,4 +24,5 @@ spring:
         min-idle: 0
 logging:
   level:
-    ran.ding.fluent.mapper: debug
+    root: debug
+    #ran.ding.fluent.mapper: debug

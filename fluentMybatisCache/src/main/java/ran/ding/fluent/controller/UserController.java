@@ -38,7 +38,6 @@ public class UserController {
                 .setCity("Probolinggo")
                 .setRegion("East Java")
                 .setCvv("436");
-        userDao.addUser(user);
         return "新增成功";
     }
     @RequestMapping("/deleteOne")

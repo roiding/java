@@ -49,8 +49,10 @@ public class UserDaoImpl extends UserBaseDao implements UserDao {
     public void deleteOneByGuid(String guid) {
         UserQuery query=new UserQuery()
                 .where()
-                .guid().eq(guid)
+                .guid()
+                .eq(guid)
                 .end();
         mapper.delete(query);
+        mapper.defaultUpdater();
     }
 }

@@ -1,0 +1,14 @@
+spring:
+    jpa:
+        show-sql: true
+    redis:
+        database: 0
+        host: 192.168.189.132
+        lettuce:
+            pool:
+                max-active: 8
+                max-idle: 8
+                min-idle: 0
+        password:
+        port: 6379
+        timeout: 5000
